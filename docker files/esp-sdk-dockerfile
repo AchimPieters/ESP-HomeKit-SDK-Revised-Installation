@@ -12,7 +12,7 @@ RUN groupadd -g 1000 docker && useradd docker -u 1000 -g 1000 -s /bin/bash --no-
 RUN mkdir /build && chown docker:docker /build
 
 # Disable Prompt During Packages Installation
-RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get -y install tzdata
+RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get -y install apt-utils tzdata
 
 # Update Ubuntu Software repository and install prerequisites
 RUN apt-get update && apt-get install -y \
