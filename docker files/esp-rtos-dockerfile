@@ -1,7 +1,7 @@
 # Download base image ubuntu 20.04
 FROM ubuntu:20.04 as builder
 
-# LABEL ESP-RTOS-DOCKERFILE
+# LABEL Information about the image
 LABEL maintainer="info@studiopieters.nl"
 LABEL version="3.0.7"
 LABEL description="This is a revised Docker Image for \
