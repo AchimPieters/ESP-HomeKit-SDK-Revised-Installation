@@ -1,0 +1,55 @@
+#Download base image ubuntu 20.04
+FROM ubuntu:20.04 as builder
+
+# LABEL ESP Homekit Software Development Kit
+LABEL maintainer="info@studiopieters.nl"
+LABEL version="3.1.9"
+LABEL description="This is a revised Docker Image for \
+the ESP Homekit Software Development Kit."
+
+# Add User
+RUN groupadd -g 1000 docker && useradd docker -u 1000 -g 1000 -s /bin/bash --no-create-home
+RUN mkdir /build && chown docker:docker /build
+
+# Disable Prompt During Packages Installation
+RUN DEBIAN_FRONTEND="noninteractive" apt-get update && apt-get -y install tzdata
+
+# Update Ubuntu Software repository and install prerequisites
+RUN apt-get update && apt-get install -y \
+  make unrar-free autoconf automake libtool gcc g++ gperf \
+  flex bison texinfo gawk ncurses-dev libexpat-dev python-dev python python3-serial \
+  python3-pip sed git unzip bash help2man wget bzip2 libtool-bin
+
+# Install Python prerequisites
+RUN apt-get update && apt-get install -y wget &&\
+    wget https://bootstrap.pypa.io/get-pip.py &&\
+    python2 get-pip.py &&\
+    pip2 --version &&\
+    pip2 install pyserial
+
+# Clone and setup ESP-OPEN-SDK
+RUN su docker -c " \
+    git clone --recursive https://github.com/pfalcon/esp-open-sdk.git /build/esp-open-sdk ; \
+    cd /build/esp-open-sdk ; \
+    # download the latest version to solve bash >= 3.1 error
+    git submodule update --recursive --remote /build/esp-open-sdk ; \
+    make STANDALONE=n ; \
+    "
+
+
+# Set base image ubuntu 20.04
+FROM ubuntu:20.04
+
+# Update Ubuntu Software repository and install prerequisi
+RUN apt-get update && apt-get install -y make python python3-serial
+
+# Install Python prerequisites
+RUN apt-get update && apt-get install -y wget &&\
+    wget https://bootstrap.pypa.io/get-pip.py &&\
+    python2 get-pip.py &&\
+    pip2 --version &&\
+    pip2 install pyserial
+
+# Set PATH
+COPY --from=builder /build/esp-open-sdk/xtensa-lx106-elf /opt/xtensa-lx106-elf
+ENV PATH /opt/xtensa-lx106-elf/bin:$PATH
