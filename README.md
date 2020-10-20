@@ -1,6 +1,12 @@
 # ESP-HomeKit-SDK-Revised-Installation
 ESP HomeKit SDK - Revised Installation
 
+- [X] Ubuntu 20.04 OS
+- [X] Dockerfile ajustement
+- [x] Update to latest respositories
+- [ ] New blog: https://www.studiopieters.nl/esp-homekit-sdk-revised-installation (00-00-2020)
+
+
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/achimpieters/ESP-HomeKit-SDK-Revised-Installation)
 ![GitHub All Releases](https://img.shields.io/github/downloads/achimpieters/ESP-HomeKit-SDK-Revised-Installation/total)
 [![GitHub license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/hyperion-project/hyperion.ng/master/LICENSE)
