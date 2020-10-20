@@ -1,8 +1,9 @@
 # ESP-HomeKit-SDK-Revised-Installation
 ESP HomeKit SDK - Revised Installation
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/achimpieters/ESP-HomeKit-SDK-Revised-Installation)
 ![GitHub All Releases](https://img.shields.io/github/downloads/achimpieters/ESP-HomeKit-SDK-Revised-Installation/total)
-[![GitHub All Releases](https://img.shields.io/github/downloads/AchimPieters/ESP-HomeKit-SDK-Revised-Installation/releases/total?color=green)](https://github.com/AchimPieters/ESP-HomeKit-SDK-Revised-Installation/releases) 
+![GitHub All Releases](https://img.shields.io/github/downloads/achimpieters/ESP-HomeKit-SDK-Revised-Installation/total)
 [![GitHub license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/hyperion-project/hyperion.ng/master/LICENSE)
 [![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://paypal.me/AJFPieters)
 
