@@ -3,6 +3,8 @@ Build instructions ESP8266 HomeKit SDK (Docker).
 
 A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.
 
+You can find the  [`build instructions`](https://github.com/AchimPieters/ESP-HomeKit-SDK-Revised-Installation/wiki)here.
+
 - [X] Ubuntu 20.04 OS
 - [X] Dockerfile ajustement
 - [x] Update to latest respositories
